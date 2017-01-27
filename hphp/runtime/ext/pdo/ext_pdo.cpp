@@ -101,6 +101,8 @@ const int64_t q_PDO$$FETCH_NAMED              = PDO_FETCH_NAMED;
 const int64_t q_PDO$$ATTR_AUTOCOMMIT          = PDO_ATTR_AUTOCOMMIT;
 const int64_t q_PDO$$ATTR_PREFETCH            = PDO_ATTR_PREFETCH;
 const int64_t q_PDO$$ATTR_TIMEOUT             = PDO_ATTR_TIMEOUT;
+const int64_t q_PDO$$ATTR_READ_TIMEOUT        = PDO_ATTR_READ_TIMEOUT;
+const int64_t q_PDO$$ATTR_WRITE_TIMEOUT       = PDO_ATTR_WRITE_TIMEOUT;
 const int64_t q_PDO$$ATTR_ERRMODE             = PDO_ATTR_ERRMODE;
 const int64_t q_PDO$$ATTR_SERVER_VERSION      = PDO_ATTR_SERVER_VERSION;
 const int64_t q_PDO$$ATTR_CLIENT_VERSION      = PDO_ATTR_CLIENT_VERSION;
@@ -3624,6 +3626,16 @@ static struct PDOExtension final : Extension {
       s_PDO.get(),
       s_ATTR_TIMEOUT.get(),
       q_PDO$$ATTR_TIMEOUT
+    );
+    Native::registerClassConstant<KindOfInt64>(
+      s_PDO.get(),
+      s_ATTR_READ_TIMEOUT.get(),
+      q_PDO$$ATTR_READ_TIMEOUT
+    );
+    Native::registerClassConstant<KindOfInt64>(
+      s_PDO.get(),
+      s_ATTR_WRITE_TIMEOUT.get(),
+      q_PDO$$ATTR_WRITE_TIMEOUT
     );
     Native::registerClassConstant<KindOfInt64>(
       s_PDO.get(),
